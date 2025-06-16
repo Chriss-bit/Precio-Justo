@@ -3,8 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>JD STORE - Precio Justo</title>
+  <meta name="description" content="JD STORE - Ofrecemos productos de calidad a precios justos en Paraguay. ¡Conocé nuestras ofertas y hacé tu pedido por WhatsApp!">
+  <meta name="keywords" content="JD Store, precio justo Paraguay, tienda online, productos baratos, ofertas, compras por WhatsApp">
+  <meta name="author" content="JD STORE">
+  <title>JD STORE - Precio Justo en Paraguay</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <style>
     body {
       font-family: 'Roboto', sans-serif;
@@ -89,11 +93,10 @@
       font-weight: bold;
     }
   </style>
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <header>
-    <img src="./precio%20justo.jpeg" alt="JD Store Logo">
+    <img src="./precio%20justo.jpeg" alt="Logo de JD STORE">
     <h1>JD STORE</h1>
     <p>Precio Justo, Calidad Garantizada</p>
   </header>
@@ -114,14 +117,14 @@
     <h2>Nuestros Productos</h2>
 
     <div class="product">
-      <img src="https://via.placeholder.com/300x200" alt="Producto 1">
+      <img src="https://via.placeholder.com/300x200" alt="Imagen del Producto 1">
       <h3>Producto 1</h3>
       <p>Gs. 50.000</p>
       <button onclick="addToCart('Producto 1', 50000)">Agregar al carrito</button>
     </div>
 
     <div class="product">
-      <img src="https://via.placeholder.com/300x200" alt="Producto 2">
+      <img src="https://via.placeholder.com/300x200" alt="Imagen del Producto 2">
       <h3>Producto 2</h3>
       <p>Gs. 75.000</p>
       <button onclick="addToCart('Producto 2', 75000)">Agregar al carrito</button>
@@ -142,11 +145,11 @@
 
   <section id="contacto">
     <h2>Contacto</h2>
-    <p>Podés contactarnos a través de nuestras redes sociales o escribirnos directamente.</p>
+    <p>Podés contactarnos a través de nuestras redes sociales o escribirnos directamente por WhatsApp.</p>
     <div class="social-icons">
-      <a href="#"><i class="fab fa-facebook"></i></a>
-      <a href="#"><i class="fab fa-instagram"></i></a>
-      <a href="#"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://www.facebook.com/tu_pagina" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.instagram.com/tu_pagina" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/595971261288" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
     </div>
   </section>
 
@@ -179,7 +182,7 @@
       });
       message += `Total: Gs. ${total.toLocaleString()}`;
 
-      const phone = '595971261288'; // Reemplazar con tu número de WhatsApp en formato internacional
+      const phone = '595971261288';
       const url = `https://wa.me/${phone}?text=${message}`;
       window.open(url, '_blank');
     }
