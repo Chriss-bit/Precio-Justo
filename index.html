@@ -82,15 +82,25 @@
       border-radius: 10px;
       margin-top: 40px;
     }
+       .cart-buttons {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+    }
     #checkout {
       background-color: #25d366;
       color: white;
       border: none;
       padding: 10px 20px;
-      margin-top: 20px;
-      cursor: pointer;
+          cursor: pointer;
       border-radius: 5px;
       font-weight: bold;
+    }
+    #cancel {
+      background-color: #888888;
+      color: white;
+      border: none;
+      padding: 10px 20px;
     }
   </style>
 </head>
@@ -119,7 +129,7 @@
     <div class="product">
         <img src="./Imagen%20de%20WhatsApp%202025-06-27%20a%20las%2010.35.13_ad497a79.jpg" alt="Imagen del Kit de pesas de 20 kg" width="200" height="100">
       <h3>Kit de pesas de 20 kg</h3>
-      <p>Gs. 290.0000</p>
+      <p>Gs. 290.000</p>
       <button onclick="addToCart('Kit de pesas de 20 kg', 290000)">Agregar al carrito</button>
     </div>
 
@@ -134,7 +144,10 @@
       <h3>Carrito</h3>
       <ul id="cartItems"></ul>
       <p><strong>Total:</strong> Gs. <span id="total">0</span></p>
-      <button id="checkout" onclick="sendWhatsAppOrder()">Finalizar pedido</button>
+       <div class="cart-buttons">
+        <button id="checkout" onclick="sendWhatsAppOrder()">Finalizar pedido</button>
+        <button id="cancel" onclick="cancelOrder()">Cancelar pedido</button>
+      </div>
     </div>
   </section>
 
@@ -185,6 +198,13 @@
       const phone = '595971261288';
       const url = `https://wa.me/${phone}?text=${message}`;
       window.open(url, '_blank');
+    }
+    
+    function cancelOrder() {
+      cartList = [];
+      total = 0;
+      document.getElementById('cartItems').innerHTML = '';
+      document.getElementById('total').textContent = '0';
     }
   </script>
 </body>
