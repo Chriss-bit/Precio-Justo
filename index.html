@@ -64,7 +64,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
       padding: 40px 20px;
       max-width: 1100px;
       margin: auto;
-    }
+        }
 
     .hero {
       background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
@@ -89,13 +89,16 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
       background-color: #f0f0f0;
     }
 
+    /* Organiza los productos en una fila con desplazamiento horizontal */
     .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      display: flex;
       gap: 20px;
+      overflow-x: auto;
+      padding-bottom: 10px;
     }
 
     .product {
+      flex: 0 0 250px;
       border: 1px solid #ccc;
       padding: 20px;
       border-radius: 10px;
@@ -104,6 +107,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       transition: transform 0.2s;
     }
+
 
     .product:hover {
       transform: translateY(-5px);
@@ -129,7 +133,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
       background-color: var(--secondary-color);
     }
 
-    .cart {
+    .cart  {
       background: #fff;
       padding: 20px;
       border-radius: 10px;
