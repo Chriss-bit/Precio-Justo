@@ -11,12 +11,12 @@
  <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
  
- <style>
+  <style>
   :root {
   --primary-color: #d40000;
   --secondary-color: #a80000;
   --light-bg: #1f1f1f; /* Antes era #f5f5f5 */
-  --text-color: #ffffff; /* Opcional: hacelo más claro si querés contraste */
+  --text-color: #f0f0f0; /* Opcional: hacelo más claro si querés contraste */
 }
 
     body {
@@ -219,23 +219,23 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     <div class="products">
       <div class="product">
         <img src="./Imagen%20de%20WhatsApp%202025-06-27%20a%20las%2010.35.13_ad497a79.jpg" alt="Imagen del Kit de pesas de 20 kg" width="400" height="300">
-        <p style="color: #ffffff;">Kit de pesas de 20 kg</p>
-        <p style="color: #ffffff;">Gs. 290.000</p>
+        <h3>Kit de pesas de 20 kg</h3>
+        <p>Gs. 290.000</p>
         <button onclick="addToCart('Kit de pesas de 20 kg', 290000)">Agregar al carrito</button>
       </div>
 
       <div class="product">
         <img src="./ChatGPT%20Image%2027%20jun%202025,%2016_39_10.png" alt="Imagen del Producto 2" width="400" height="300">
-        <p style="color: #ffffff;">Televisor de 70 pulgadas JVC</p>
-        <p style="color: #ffffff;">Gs. 4.100.000</p>
+        <h3>Televisor de 70 pulgadas JVC</h3>
+        <p>Gs. 4.100.000</p>
         <button onclick="addToCart('Televisor de 70 pulgadas JVC', 4100000)">Agregar al carrito</button>
       </div>
     </div>
 
     <div class="cart" id="cart">
-      <p style="color: #ffffff;">Carrito</p>
+      <h3>Carrito</h3>
       <ul id="cartItems"></ul>
-      <p style="color: #ffffff;"><strong>Total:</strong> Gs. <span id="total">0</span></p>
+      <p><strong>Total:</strong> Gs. <span id="total">0</span></p>
       <div class="cart-buttons">
         <button id="checkout" onclick="sendWhatsAppOrder()">Finalizar pedido</button>
         <button id="cancel" onclick="cancelOrder()">Cancelar pedido</button>
@@ -274,7 +274,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     function addToCart(product, price) {
       cartList.push({ product, price });
       const item = document.createElement('li');
-      item.textContent = `${product} - Gs. ${price.toLocaleString('es-PY')}`;
+      item.textContent = ${product} - Gs. ${price.toLocaleString('es-PY')};
       document.getElementById('cartItems').appendChild(item);
       total += price;
       document.getElementById('total').textContent = total.toLocaleString('es-PY');
@@ -288,12 +288,12 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
 
       let message = 'Hola, quiero hacer el siguiente pedido:\n';
       cartList.forEach(item => {
-        message += `- ${item.product}: Gs. ${item.price.toLocaleString('es-PY')}\n`;
+        message += - ${item.product}: Gs. ${item.price.toLocaleString('es-PY')}\n;
       });
-      message += `Total: Gs. ${total.toLocaleString('es-PY')}`;
+      message += Total: Gs. ${total.toLocaleString('es-PY')};
 
       const phone = '595971261288';
-      const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+      const url = https://wa.me/${phone}?text=${encodeURIComponent(message)};
       window.open(url, '_blank');
       cancelOrder();
     }
