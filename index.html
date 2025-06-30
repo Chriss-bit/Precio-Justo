@@ -225,7 +225,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
       </div>
 
       <div class="product">
-        <img src="./ChatGPT%20Image%2027%20jun%202025,%2016_39_10.png" alt="Imagen del Producto 2" width="400" height="300">
+        <img src="./ChatGPT%20Image%2027%20jun%202025,%2016_39_10.png" alt="Imagen del Televisor de 70 pulgadas JVC" width="400" height="300">
         <h3>Televisor de 70 pulgadas JVC</h3>
         <p>Gs. 4.100.000</p>
         <button onclick="addToCart('Televisor de 70 pulgadas JVC', 4100000)">Agregar al carrito</button>
@@ -262,7 +262,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     <p>&copy; 2025 JD STORE - Todos los derechos reservados.</p>
   </footer>
 
-  <script>
+   <script>
     let total = 0;
     let cartList = [];
 
@@ -274,7 +274,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     function addToCart(product, price) {
       cartList.push({ product, price });
       const item = document.createElement('li');
-      item.textContent = ${product} - Gs. ${price.toLocaleString('es-PY')};
+      item.textContent = `${product} - Gs. ${price.toLocaleString('es-PY')}`;
       document.getElementById('cartItems').appendChild(item);
       total += price;
       document.getElementById('total').textContent = total.toLocaleString('es-PY');
@@ -288,12 +288,12 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
 
       let message = 'Hola, quiero hacer el siguiente pedido:\n';
       cartList.forEach(item => {
-        message += - ${item.product}: Gs. ${item.price.toLocaleString('es-PY')}\n;
+        message += `- ${item.product}: Gs. ${item.price.toLocaleString('es-PY')}\n`;
       });
-      message += Total: Gs. ${total.toLocaleString('es-PY')};
+      message += `Total: Gs. ${total.toLocaleString('es-PY')}`;
 
       const phone = '595971261288';
-      const url = https://wa.me/${phone}?text=${encodeURIComponent(message)};
+      const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
       window.open(url, '_blank');
       cancelOrder();
     }
