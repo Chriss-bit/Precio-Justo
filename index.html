@@ -64,7 +64,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
       padding: 40px 20px;
       max-width: 1100px;
       margin: auto;
-        }
+          }
 
     .hero {
       background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
@@ -89,12 +89,26 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
       background-color: #f0f0f0;
     }
 
-    /* Organiza los productos en una fila con desplazamiento horizontal */
+    /* Contenedor de productos con desplazamiento horizontal */
+    .slider {
+      display: flex;
+      align-items: center;
+    }
+
+    .slider button {
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      padding: 0 10px;
+    }
+
     .products {
       display: flex;
       gap: 20px;
       overflow-x: auto;
-      padding-bottom: 10px;
+      scroll-behavior: smooth;
+      padding: 10px 0;
     }
 
     .product {
@@ -133,55 +147,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
       background-color: var(--secondary-color);
     }
 
-    .cart  {
-      background: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      margin-top: 40px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-
-    .cart-buttons {
-      display: flex;
-      gap: 10px;
-      margin-top: 20px;
-    }
-
-    #checkout {
-      background-color: #25d366;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      cursor: pointer;
-      border-radius: 5px;
-      font-weight: bold;
-    }
-
-    #cancel {
-      background-color: #888888;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-    }
-
-    footer {
-      background-color: var(--secondary-color);
-      color: white;
-      text-align: center;
-      padding: 20px;
-    }
-
-    .social-icons {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      margin-top: 20px;
-    }
-
-    .social-icons a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
+    .cart {
+@@ -181,78 +199,120 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
       width: 40px;
       height: 40px;
       color: white;
@@ -207,8 +174,10 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
   <nav>
     <a href="#inicio">Inicio</a>
     <a href="#productos">Productos</a>
+    <a href="#electronica">Electrónica</a>
+    <a href="#deportes">Deportes</a>
     <a href="#sobremi">Sobre mí</a>
-    
+
   </nav>
 
   <section id="inicio" class="hero">
@@ -219,33 +188,63 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
 
   <section id="productos">
     <h2>Nuestros Productos</h2>
-  <div class="products">
-      <div class="product">
-        <img src="./Imagen%20de%20WhatsApp%202025-06-27%20a%20las%2010.35.13_ad497a79.jpg" alt="Imagen del Kit de pesas de 20 kg" width="400" height="300">
-        <h3>Kit de pesas de 20 kg</h3>
-        <p>Gs. 290.000</p>
-        <button onclick="addToCart('Kit de pesas de 20 kg', 290000)">Agregar al carrito</button>
 
-    
-         <section id="Televisores">
-      <h3>Televisores</h3>
-      <div class="products">
-       
-    <div class="products">
-        <div class="product">
-          <img src="./ChatGPT%20Image%2027%20jun%202025,%2016_39_10.png" alt="Imagen del Televisor de 70 pulgadas JVC" width="400" height="300">
-          <h3>Televisor de 70 pulgadas JVC</h3>
-          <p>Gs. 4.100.000</p>
-          <button onclick="addToCart('Televisor de 70 pulgadas JVC', 4100000)">Agregar al carrito</button>
+    <section id="electronica">
+      <h3>Electrónica</h3>
+      <div class="slider">
+        <button onclick="scrollRow('electronica-row', -1)">&#10094;</button>
+        <div class="products" id="electronica-row">
+          <div class="product">
+            <img src="./ChatGPT%20Image%2027%20jun%202025,%2016_39_10.png" alt="Imagen del Televisor de 70 pulgadas JVC" width="400" height="300">
+            <h3>Televisor de 70 pulgadas JVC</h3>
+            <p>Gs. 4.100.000</p>
+            <button onclick="addToCart('Televisor de 70 pulgadas JVC', 4100000)">Agregar al carrito</button>
+          </div>
+          <div class="product">
+            <img src="./ChatGPT%20Image%2027%20jun%202025,%2016_39_10.png" alt="Imagen de Smartphone" width="400" height="300">
+            <h3>Smartphone Samsung S24</h3>
+            <p>Gs. 3.000.000</p>
+            <button onclick="addToCart('Smartphone Samsung S24', 3000000)">Agregar al carrito</button>
+          </div>
+          <div class="product">
+            <img src="./ChatGPT%20Image%2027%20jun%202025,%2016_39_10.png" alt="Imagen de Auriculares" width="400" height="300">
+            <h3>Auriculares Bluetooth</h3>
+            <p>Gs. 150.000</p>
+            <button onclick="addToCart('Auriculares Bluetooth', 150000)">Agregar al carrito</button>
+          </div>
         </div>
-        <div class="product">
-          <img src="./ChatGPT%20Image%2027%20jun%202025,%2016_39_10.png" alt="Imagen del Televisor de 70 pulgadas JVC" width="400" height="300">
-          <h3>Televisor de 70 pulgadas JVC</h3>
-          <p>Gs. 4.100.000</p>
-          <button onclick="addToCart('Televisor de 70 pulgadas JVC', 4100000)">Agregar al carrito</button>
+        <button onclick="scrollRow('electronica-row', 1)">&#10095;</button>
+      </div>
+    </section>
+
+    <section id="deportes">
+      <h3>Deportes</h3>
+      <div class="slider">
+        <button onclick="scrollRow('deportes-row', -1)">&#10094;</button>
+        <div class="products" id="deportes-row">
+          <div class="product">
+            <img src="./Imagen%20de%20WhatsApp%202025-06-27%20a%20las%2010.35.13_ad497a79.jpg" alt="Imagen del Kit de pesas de 20 kg" width="400" height="300">
+            <h3>Kit de pesas de 20 kg</h3>
+            <p>Gs. 290.000</p>
+            <button onclick="addToCart('Kit de pesas de 20 kg', 290000)">Agregar al carrito</button>
+          </div>
+          <div class="product">
+            <img src="./Imagen%20de%20WhatsApp%202025-06-27%20a%20las%2010.35.13_ad497a79.jpg" alt="Imagen de Pelota" width="400" height="300">
+            <h3>Pelota de fútbol</h3>
+            <p>Gs. 80.000</p>
+            <button onclick="addToCart('Pelota de fútbol', 80000)">Agregar al carrito</button>
+          </div>
+          <div class="product">
+            <img src="./Imagen%20de%20WhatsApp%202025-06-27%20a%20las%2010.35.13_ad497a79.jpg" alt="Imagen de Bicicleta" width="400" height="300">
+            <h3>Bicicleta de montaña</h3>
+            <p>Gs. 2.500.000</p>
+            <button onclick="addToCart('Bicicleta de montaña', 2500000)">Agregar al carrito</button>
+          </div>
         </div>
-    </div></div>
-</div>
+        <button onclick="scrollRow('deportes-row', 1)">&#10095;</button>
+      </div>
+    </section>
+
 <div class="cart" id="cart">
       <h3>Carrito</h3>
       <ul id="cartItems"></ul>
@@ -270,23 +269,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
       <a class="instagram" href="https://www.instagram.com/preciojustopy/?hl=es" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
       <a class="whatsapp" href="https://wa.me/595971261288" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
     </div>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 JD STORE - Todos los derechos reservados.</p>
-  </footer>
-
-   <script>
-    let total = 0;
-    let cartList = [];
-
-    // Ensure the page always opens at the top
-    window.addEventListener('load', () => {
-      window.scrollTo(0, 0);
-    });
-
-    function addToCart(product, price) {
-      cartList.push({ product, price });
+@@ -276,34 +336,40 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
       const item = document.createElement('li');
       item.textContent = `${product} - Gs. ${price.toLocaleString('es-PY')}`;
       document.getElementById('cartItems').appendChild(item);
@@ -310,6 +293,12 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
       const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
       window.open(url, '_blank');
       cancelOrder();
+    }
+
+    function scrollRow(id, direction) {
+      const row = document.getElementById(id);
+      const scrollAmount = 270;
+      row.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
     }
 
     function cancelOrder() {
