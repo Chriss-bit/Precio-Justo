@@ -148,7 +148,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     }
 
     .cart {
-
       width: 40px;
       height: 40px;
       color: white;
@@ -243,13 +242,15 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         </div>
         <button onclick="scrollRow('deportes-row', 1)">&#10095;</button>
       </div>
+    </section>
+
 <div class="cart" id="cart">
       <h3>Carrito</h3>
       <ul id="cartItems"></ul>
       <p><strong>Total:</strong> Gs. <span id="total">0</span></p>
       <div class="cart-buttons">
-        <button id="checkout" onclick="sendWhatsAppOrder()">Finalizar pedido</button>
-        <button id="cancel" onclick="cancelOrder()">Cancelar pedido</button>
+        <button id="checkout">Finalizar pedido</button>
+        <button id="cancel">Cancelar pedido</button>
       </div>
     </div>
   </section>
@@ -267,7 +268,25 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
       <a class="instagram" href="https://www.instagram.com/preciojustopy/?hl=es" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
       <a class="whatsapp" href="https://wa.me/595971261288" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
     </div>
-<script>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 JD STORE - Todos los derechos reservados.</p>
+  </footer>
+
+   <script>
+    let total = 0;
+    let cartList = [];
+
+    // Ensure the page always opens at the top and set up cart buttons
+    window.addEventListener('load', () => {
+      window.scrollTo(0, 0);
+      document.getElementById('checkout').addEventListener('click', sendWhatsAppOrder);
+      document.getElementById('cancel').addEventListener('click', cancelOrder);
+    });
+
+    function addToCart(product, price) {
+      cartList.push({ product, price });
       const item = document.createElement('li');
       item.textContent = `${product} - Gs. ${price.toLocaleString('es-PY')}`;
       document.getElementById('cartItems').appendChild(item);
